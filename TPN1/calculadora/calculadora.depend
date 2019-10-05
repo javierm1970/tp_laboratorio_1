@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1567514904 source:d:\trabajos practicos\tp n1\calculadora\operaciones_calc.c
+	<stdio.h>
+	<stdlib.h>
+
+1567555219 source:d:\trabajos practicos\tp n1\calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	".\operaciones_calc.h"
+
+1567514904 d:\trabajos practicos\tp n1\calculadora\operaciones_calc.h
+
+1567572614 source:d:\mis documentos\javier\tecnico programador  utn javier\programacion i cursada 2019\trabajos practicos2\trabajos practicos2\tp n1\calculadora\operaciones_calc.c
+	<stdio.h>
+	<stdlib.h>
+
+1567573432 source:d:\mis documentos\javier\tecnico programador  utn javier\programacion i cursada 2019\trabajos practicos2\trabajos practicos2\tp n1\calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	".\operaciones_calc.h"
+
+1567567173 d:\mis documentos\javier\tecnico programador  utn javier\programacion i cursada 2019\trabajos practicos2\trabajos practicos2\tp n1\calculadora\operaciones_calc.h
+
+1567559688 source:d:\mis documentos\tecnico programador  utn javier\programacion i cursada 2019\tp n1\calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	".\operaciones_calc.h"
+
+1567611142 d:\mis documentos\tecnico programador  utn javier\programacion i cursada 2019\tp n1\calculadora\operaciones_calc.h
+
+1567597352 source:d:\mis documentos\javier\tecnico programador  utn javier\programacion i cursada 2019\tp n1\tp n1\calculadora\operaciones_calc.c
+	<stdio.h>
+	<stdlib.h>
+
+1567710808 source:d:\trabajos_practicos\tpn1\calculadora\operaciones_calc.c
+	<stdio.h>
+	<stdlib.h>
+
