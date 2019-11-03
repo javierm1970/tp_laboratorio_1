@@ -24,6 +24,19 @@ int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas);
 int employee_setSueldo(Employee* this,int sueldo);
 int employee_getSueldo(Employee* this,int* sueldo);
 
+void muestraUnEmpleado(Employee* emp);
+void muestraEmpleados(LinkedList* pArrayLinkedList);
+
+int ordenaPorId(void* emp1, void* emp2);
+int ordenaPorNombre(void* emp1, void* emp2);
+int ordenaPorHorasTrabajadas(void* emp1 , void* emp2);
+int ordenaPorSalario(void* emp1, void* emp2);
+
+//void ll_sort2(LinkedList* pArrayLinkedList, int ord);
+
+
+
+
 
 
 #endif // employee_H_INCLUDED
