@@ -179,19 +179,20 @@ void ll_sort2(LinkedList* pArrayLinkedList, int ord)
     Employee* p2;
     //Employee* aux;
 
+    LinkedList* lista=ll_clone(pArrayLinkedList);
     len=ll_len(pArrayLinkedList);
+    printf("%d",len);
+    miPausa("");
 
     while (flagNoEstaOrdenado==1)
     {
-
-
         flagNoEstaOrdenado = 0;
 
         for (j = 1; j < len; j++)
 	    {
             i++;
             //p1=((Employee* ) ll_get(pArrayLinkedList,j))
-            //p2=((Employee* ) ll_get(pArrayLinkedList,i));
+            p2=((Employee* ) ll_get(pArrayLinkedList,i));
             p1=((Employee* ) ll_get(pArrayLinkedList,j));
 
             printf("\n%d     %s     %d   %s     %d",p1->id, p1->nombre,p2->id,p2->nombre,i);
@@ -206,23 +207,9 @@ void ll_sort2(LinkedList* pArrayLinkedList, int ord)
                 flagNoEstaOrdenado = 1;
             }
         }
+        i=-1;
      }
      //aux=NULL;
-
-
- for(i=1;i<len;i++)
- {
-    temp = data[i];
-
-    j=i-1;
-
-        while(j>=0 && strcmp(temp.lastName,data[j].lastName)<0) // temp<data[j] o temp>data[j]
-        {
-             data[j+1] = data[j];
-             j--;
-        }
-    data[j+1]=temp; // inserción
- }
 }
 */
 

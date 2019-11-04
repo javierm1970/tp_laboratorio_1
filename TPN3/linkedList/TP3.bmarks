@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <BrowseTracker_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="Controller.c" open="1" top="1" tabpos="0">
-		<Cursor position="0" topLine="0" />
-		<BrowseMarks positions="102,590,4235,4367,4387,13465" />
-		<Book_Marks positions="0,0,0" />
-	</File>
-	<File name="Controller.h" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
-	</File>
-	<File name="Employee.c" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
-		<BrowseMarks positions="3238" />
-		<Book_Marks positions="0,0" />
-	</File>
-	<File name="Employee.h" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
-	</File>
-	<File name="main.c" open="1" top="0" tabpos="0">
+	<File name="utn.h" open="1" top="0" tabpos="0">
 		<Cursor position="0" topLine="0" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
-	<File name="utn.h" open="1" top="0" tabpos="0">
+	<File name="Employee.h" open="1" top="0" tabpos="0">
 		<Cursor position="0" topLine="0" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
 	</File>
 	<File name="parser.h" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="LinkedList.h" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="utn.c" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="Controller.h" open="1" top="0" tabpos="0">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="parser.c" open="1" top="0" tabpos="0">
@@ -33,10 +30,17 @@
 		<BrowseMarks positions="2528" />
 		<Book_Marks positions="0,0" />
 	</File>
-	<File name="utn.c" open="1" top="0" tabpos="0">
+	<File name="Employee.c" open="1" top="0" tabpos="0">
 		<Cursor position="0" topLine="0" />
+		<BrowseMarks positions="3238" />
+		<Book_Marks positions="0,0,0" />
 	</File>
-	<File name="LinkedList.h" open="1" top="0" tabpos="0">
+	<File name="Controller.c" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+		<BrowseMarks positions="102,590,4235,4367,4387,13465" />
+		<Book_Marks positions="0,0,0,0" />
+	</File>
+	<File name="main.c" open="1" top="1" tabpos="0">
 		<Cursor position="0" topLine="0" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
