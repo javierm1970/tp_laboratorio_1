@@ -162,6 +162,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     char confirm;
     int index=-1;
     char opcion;
+    char opcion2;
 
     Employee* emp;
 
@@ -169,6 +170,17 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     {
         miCls();
         getChoiceForm("Modifica Empleado",1,78);
+
+        opcion2=getChar2("<s> Listar Empleados / una tecla para continuar");
+        opcion2=tolower(opcion2);
+        if (opcion2=='s')
+        {
+            printf("\nOrdenando...\n");
+            ll_sort2(pArrayListEmployee,ordenaPorId,0);
+            muestraEmpleados(pArrayListEmployee);
+        }
+
+
         r=getInt(&auxId,"\nIngrese Id: ","Error, ingrese Id entre (1-2,000): ",1,2000);
         if (!r)
         {
@@ -288,6 +300,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
     char confirm;
     int index=-1;
     char opcion;
+    char opcion2;
 
     Employee* emp;
 
@@ -295,6 +308,16 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
     {
         miCls();
         getChoiceForm("Baja de Empleado",1,78);
+
+        opcion2=getChar2("<s> Listar Empleados / una tecla para continuar");
+        opcion2=tolower(opcion2);
+        if (opcion2=='s')
+        {
+            printf("\nOrdenando...\n");
+            ll_sort2(pArrayListEmployee,ordenaPorId,0);
+            muestraEmpleados(pArrayListEmployee);
+        }
+
         r=getInt(&auxId,"\nIngrese Id: ","Error, ingrese Id entre (1-2,000): ",1,2000);
         if (!r)
         {
@@ -362,10 +385,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
     int r=-1;
     if(pArrayListEmployee!=NULL)
     {
-        system("cls");
-        printf("           ID  | Nombre                          | Horas | Salario\n");
-        rellena_Espacio('*',78,1);
-        printf("\n");
+        encabezadoListados(" ID  | Nombre                         | Horas | Salario ",1,78);
         muestraEmpleados(pArrayListEmployee);
         printf("\n");
         miPausa("Presione una tecla para continuar...");
@@ -399,14 +419,14 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
             if(orden==1)
             {
                 ll_sort(pArrayListEmployee,ordenaPorId,0);
-                controller_ListEmployee(pArrayListEmployee);
+                //controller_ListEmployee(pArrayListEmployee);
                 r=1;
             }
 
             else if(orden==2)
             {
                 ll_sort(pArrayListEmployee,ordenaPorId,1);
-                controller_ListEmployee(pArrayListEmployee);
+                //controller_ListEmployee(pArrayListEmployee);
                 r=1;
             }
 
@@ -419,13 +439,13 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 
             if(orden==1)
             {
-                ll_sort(pArrayListEmployee,ordenaPorNombre,1);
+                ll_sort(pArrayListEmployee,ordenaPorNombre,0);
                 //controller_ListEmployee(pArrayListEmployee);
                 r=1;
             }
             else if (orden==2)
             {
-                ll_sort(pArrayListEmployee,ordenaPorNombre,0);
+                ll_sort(pArrayListEmployee,ordenaPorNombre,1);
                 //controller_ListEmployee(pArrayListEmployee);
                 r=1;
             }
@@ -454,13 +474,13 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
             if(orden==1)
             {
                 ll_sort(pArrayListEmployee,ordenaPorSalario,0);
-                //controller_ListEmployee(pArrayListEmployee);
+                controller_ListEmployee(pArrayListEmployee);
                 r=1;
             }
             else if (orden==2)
             {
                 ll_sort(pArrayListEmployee,ordenaPorSalario,1);
-                //controller_ListEmployee(pArrayListEmployee);
+                controller_ListEmployee(pArrayListEmployee);
                 r=1;
             }
 

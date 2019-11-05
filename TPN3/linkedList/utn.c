@@ -7,7 +7,13 @@
 #include "Employee.h"
 #include "utn.h"
 
-
+void encabezadoListados(char titulo[],int canFila, int canCol)
+{
+        system("cls");
+        getChoiceForm(titulo,canFila,canCol);
+        rellena_Espacio('*',canFila,canCol);
+        printf("\n");
+}
 void miTrim (const char array_entrada[], char array_salida[])
 {
     int i,j=0,inicioCadena=0;
@@ -367,7 +373,7 @@ int tipoDeOrden(void)
         getInt(&opcion,"Ingrese una opción: ","Error, 1- Descendente / 2- Ascendente",1,2);
 
     }while (!(opcion>=1 && opcion<=2));
-
+    printf("\nOdenando... Espere un momento...");
 
     return opcion;
 }

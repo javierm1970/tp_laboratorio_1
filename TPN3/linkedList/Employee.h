@@ -146,7 +146,8 @@ int ordenaPorHorasTrabajadas(void* emp1 , void* emp2);
  */
 int ordenaPorSalario(void* emp1, void* emp2);
 
-//void ll_sort2(LinkedList* pArrayLinkedList, int ord);
+
+
 
 
 #endif // employee_H_INCLUDED

@@ -145,11 +145,13 @@ void muestraEmpleados(LinkedList* pArrayLinkedList)
 
     if(pArrayLinkedList!=NULL)
     {
+        encabezadoListados(" ID  | Nombre                         | Horas | Salario ",1,78);
         for(int i=0;i<ll_len(pArrayLinkedList);i++)
         {
             if (j==19)
             {
                 miPausa("Una tecla para continuar... ");
+                encabezadoListados(" ID  | Nombre                         | Horas | Salario ",1,78);
                 j=0;
             }
             j++;
@@ -164,54 +166,72 @@ void muestraEmpleados(LinkedList* pArrayLinkedList)
 void muestraUnEmpleado(Employee* emp)
 {
     if(emp!=NULL)
-    printf("\t%5d  %s               \t%s \t%4d  \t%6d\n",emp->id,emp->nombre," ",emp->horasTrabajadas,emp->sueldo);
+    printf("\t%5d \t%-15s               \t%4d  \t%6d\n",emp->id,emp->nombre,emp->horasTrabajadas,emp->sueldo);
 }
-/*
-void ll_sort2(LinkedList* pArrayLinkedList, int ord)
+
+void ll_sort2(LinkedList* pArrayLinkedList,int (*pFunc)(void*,void*), int ord)
 {
-    int i=-1;
+    int i;
     int j;
-    int r;
     int len;
-    int flagNoEstaOrdenado = 1;
-    //Clientes aux;
+    int r;
+
     Employee* p1;
     Employee* p2;
-    //Employee* aux;
+    Employee* aux;
 
-    LinkedList* lista=ll_clone(pArrayLinkedList);
     len=ll_len(pArrayLinkedList);
-    printf("%d",len);
-    miPausa("");
 
-    while (flagNoEstaOrdenado==1)
+    for (i=0;i<len-1;i++)
     {
-        flagNoEstaOrdenado = 0;
-
-        for (j = 1; j < len; j++)
+        for (j = i+1; j < len; j++)
 	    {
-            i++;
-            //p1=((Employee* ) ll_get(pArrayLinkedList,j))
-            p2=((Employee* ) ll_get(pArrayLinkedList,i));
-            p1=((Employee* ) ll_get(pArrayLinkedList,j));
 
-            printf("\n%d     %s     %d   %s     %d",p1->id, p1->nombre,p2->id,p2->nombre,i);
-            miPausa("");
-            if(p1->id>p2->id)
-	        {
-                r=employee_setId(p1,p2->id),
-                r=employee_setNombre(p1,p2->nombre);
-                r=employee_setHorasTrabajadas(p1,p2->horasTrabajadas);
-                r=employee_setSueldo(p1,p2->sueldo);
+            p1=((Employee* ) ll_get(pArrayLinkedList,i));
+            p2=((Employee* ) ll_get(pArrayLinkedList,j));
 
-                flagNoEstaOrdenado = 1;
+	        r=pFunc(p1,p2);
+	        //ord=1;//descendente
+	        //ord=0;//ascendente
+
+            switch (ord)
+            {
+                case 0:
+                    if (r==1)
+                    {
+                        aux=p1;
+                        ll_set(pArrayLinkedList,i,p2);
+                        ll_set(pArrayLinkedList,j,aux);
+                    }
+                    break;
+                case 1:
+                    if (r==-1)
+                    {
+                        aux=p1;
+                        ll_set(pArrayLinkedList,i,p2);
+                        ll_set(pArrayLinkedList,j,aux);
+                    }
+
+                    break;
             }
         }
-        i=-1;
-     }
-     //aux=NULL;
+    }
+    /*
+    j=0;
+    for (i=0;i<len;i++)
+    {
+        p1=((Employee* ) ll_get(pArrayLinkedList,i));
+        printf("\n%4d  %-15s              %4d        %10d",p1->id,p1->nombre,p1->horasTrabajadas,p1->sueldo);
+        j++;
+        if (j==22)
+        {
+            miPausa("***");
+            j=0;
+        }
+    }
+    */
 }
-*/
+
 
 int ordenaPorId(void* emp1, void* emp2)
 {
@@ -248,9 +268,9 @@ int ordenaPorNombre(void* emp1, void* emp2)
         p2=(Employee*) emp2;
 
         if(strcmp(p1->nombre,p2->nombre)==-1)
-            retorno = 1;
+            retorno = -1;
         else if(strcmp(p1->nombre,p2->nombre)==1)
-            retorno=-1;
+            retorno=1;
         else
             retorno=0;
     }

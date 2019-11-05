@@ -68,25 +68,79 @@ int esAlfaNumerico(char str[]);
  *
  */
 
+/** \brief verifica si una cadena de caracteres es convertible a un float
+ *
+ * \param str[] char
+ * \return int 1 si lo es -1 si no lo es
+ *
+ */
 int esNumericoFlotante(char str[]);
 
+/** \brief Una pausa en el sistema y muestra un mensaje orientativo
+ *
+ * \param mensaje[] char
+ * \return void
+ *
+ */
 void miPausa(char mensaje[]);
 
+/** \brief limpia la pantalla
+ *
+ * \param void
+ * \return void
+ *
+ */
 void miCls(void);
 
-/** \brief
+
+/** \brief Input para una Cadena de caracteres
  *
- * \param
- * \param
- * \return
+ * \param array[] char se pasa un array vacio y se llena
+ * \param tamano int tamano del array
+ * \return void
  *
  */
 void miFgets(char array[], int tamano);
 
+/** \brief Busca y devuelve el proximo Id para una carga secuencial
+ *
+ * \param pArrayListEmployee LinkedList*
+ * \return int devuelve un proximo Id
+ *
+ */
 int nextIdLinkedList(LinkedList* pArrayListEmployee);
 
+/** \brief A partir de un Id busca y devuelve el indice donde esta ese Id
+ *
+ * \param pArrayListEmployee LinkedList*
+ * \param idLinkedlist int
+ * \return int un indice buscado
+ *
+ */
 int indexLinkedList(LinkedList* pArrayListEmployee,int idLinkedlist);
 
+/** \brief un menu donde devuelve el orden a listar u ordenar
+ *
+ * \param void
+ * \return int 1 Descendente 0 ascendente
+ *
+ */
 int tipoDeOrden(void);
 
+/** \brief Menu donde se pide que se elija por que campo se va a ordenar la lista
+ *
+ * \param void
+ * \return char opcion
+ *
+ */
 char menuOrdenamiento(void);
+
+/** \brief
+ *
+ * \param titulo[] char
+ * \param canFila int
+ * \param canCol int
+ * \return void
+ *
+ */
+void encabezadoListados(char titulo[],int canFila, int canCol);

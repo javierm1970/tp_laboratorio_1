@@ -96,7 +96,7 @@ int main()
             break;
 
         case 7:
-            //ll_sort2(listaEmpleados,1);
+            //ll_sort2(listaEmpleados,ordenaPorSalario,1);
             //r=controller_ListEmployee(listaEmpleados);
             r=controller_sortEmployee(listaEmpleados);
             validaciones(r,7);
