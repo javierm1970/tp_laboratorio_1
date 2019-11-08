@@ -61,4 +61,4 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);
  * \return int Retorna  (-1) Error: si el puntero a la listas es NULL
                         ( 0) Si ok
  */
-void ll_sort2(LinkedList* pArrayLinkedList,int (*pFunc)(void*,void*), int ord);
+//void ll_sort2(LinkedList* pArrayLinkedList,int (*pFunc)(void*,void*), int ord);

@@ -176,7 +176,8 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
         if (opcion2=='s')
         {
             printf("\nOrdenando...\n");
-            ll_sort2(pArrayListEmployee,ordenaPorId,0);
+            //ll_sort2(pArrayListEmployee,ordenaPorId,0);
+            ll_sort(pArrayListEmployee,ordenaPorId,1);
             muestraEmpleados(pArrayListEmployee);
         }
 
@@ -314,7 +315,8 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
         if (opcion2=='s')
         {
             printf("\nOrdenando...\n");
-            ll_sort2(pArrayListEmployee,ordenaPorId,0);
+            ll_sort(pArrayListEmployee,ordenaPorId,1);
+            //ll_sort2(pArrayListEmployee,ordenaPorId,0);
             muestraEmpleados(pArrayListEmployee);
         }
 
