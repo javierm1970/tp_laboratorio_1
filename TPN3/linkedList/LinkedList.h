@@ -54,11 +54,15 @@ LinkedList* ll_subList(LinkedList* this,int from,int to);
 LinkedList* ll_clone(LinkedList* this);
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);
 
-/** \brief Ordena los elementos de la lista utilizando la funcion criterio recibida como parametro
+/*
+   \brief Ordena los elementos de la lista utilizando la funcion criterio recibida como parametro
  * \param pList LinkedList* Puntero a la lista
  * \param pFunc (*pFunc) Puntero a la funcion criterio
  * \param order int  [1] Indica orden ascendente - [0] Indica orden descendente
  * \return int Retorna  (-1) Error: si el puntero a la listas es NULL
                         ( 0) Si ok
- */
-//void ll_sort2(LinkedList* pArrayLinkedList,int (*pFunc)(void*,void*), int ord);
+ *
+
+
+void ll_sort2(LinkedList* pArrayLinkedList,int (*pFunc)(void*,void*), int ord);
+*/

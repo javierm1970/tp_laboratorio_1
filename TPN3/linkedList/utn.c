@@ -122,7 +122,7 @@ int muestraMenu(void)
 
 }
 
-char getChoiceForm(char titulo[],int CANT,int LENMENU)
+void getChoiceForm(char titulo[],int CANT,int LENMENU)
 {
 
     int margen;
@@ -139,8 +139,6 @@ char getChoiceForm(char titulo[],int CANT,int LENMENU)
     printf("\n");
     rellena_Espacio('*',LENMENU,1);
     printf("\n");
-
-    return 0;
 }
 
 int getInt(int *numero,char mensaje1[],char mensajeError1[],int minimo,int maximo)

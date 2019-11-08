@@ -10,14 +10,53 @@
  */
 void miTrim (const char array_entrada[], char array_salida[]);
 
+/** \brief verifica si una cadena de caracteres recibio o no solo letras
+ *
+ * \param str[] char cadena a validar
+ * \return int 1 si solo son letras -1 si no lo son
+ *
+ */
 int esSoloLetras(char str[]);
 
+/** \brief menu especifico de la aplicacion
+ *
+ * \param void
+ * \return int opcion de menu seleccionado
+ *
+ */
 int muestraMenu(void);
 
-char getChoiceForm(char titulo[],int CANT,int LENMENU);
+/** \brief encabezado de una pantalla
+ *
+ * \param titulo[] char titulo de la pantalla
+ * \param CANT int cantidad de filas que ocupa el encabezado
+ * \param LENMENU int cantidad de columnas
+ * \return void
+ *
+ */
+void getChoiceForm(char titulo[],int CANT,int LENMENU);
 
+/** \brief input de numeros enteros
+ *
+ * \param numero int* puntero del numero que se desea validar
+ * \param mensaje1[] char inscripcion orientativa de la carga
+ * \param mensajeError1[] char mensaje de error si se produciera
+ * \param minimo int valor minimo del numero ingresado
+ * \param maximo int valor minimo del numero ingresado
+ * \return int 1 si la operacion fue exitosa -1 si no lo fue
+ *
+ */
 int getInt(int *numero,char mensaje1[],char mensajeError1[],int minimo,int maximo);
 
+
+/** \brief imprime un determinado caracter en n filas y n columnas
+ *
+ * \param caracter ej: '*'
+ * \param can_col cantidad columnas
+ * \param can_fila cantidad de filas
+ * \return void
+ *
+ */
 void rellena_Espacio (char caracter,int can_col,int can_fila);
 
 /** \brief despliega un mensaje y al presionar una tecla obtiene
