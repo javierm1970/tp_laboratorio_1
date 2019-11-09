@@ -81,12 +81,7 @@ static Node* getNode(LinkedList* this, int nodeIndex)
  */
 Node* test_getNode(LinkedList* this, int nodeIndex)
 {
-
     return getNode(this, nodeIndex);
-
-
-
-
 }
 
 
@@ -300,16 +295,8 @@ int ll_deleteLinkedList(LinkedList* this)
     int returnAux = -1;
     if (this!=NULL)
     {
-        if (ll_len(this)>=0)
-        {
-            free(this);
-            returnAux=0;
-        }
-        else
-        {
-            free(this);
-            returnAux=1;
-        }
+        free(this);
+        returnAux=0;
     }
 
     return returnAux;
@@ -386,12 +373,12 @@ int ll_push(LinkedList* this, int index, void* pElement)
     int returnAux = -1;
 
     if (this!=NULL && index>=0 && index<=ll_len(this))
-
+    {
         if (addNode(this,index,pElement)==0)
         {
             returnAux=0;
         }
-
+    }
     return returnAux;
 }
 
@@ -576,8 +563,9 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
     void* p2;
     void* aux;
 
-    if (this!=NULL && pFunc!=NULL)
+    if (this!=NULL && pFunc!=NULL && order>=0 && order<=1)
     {
+        returnAux=0;
         for (i=0;i<ll_len(this)-1;i++)
         {
             for (j = i+1; j < ll_len(this); j++)
@@ -585,10 +573,17 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
                 p1=((void* ) ll_get(this,i));
                 p2=((void* ) ll_get(this,j));
 
-                r=pFunc(p1,p2);
-                //ord=1;//descendente
-                //ord=0;//ascendente
+                r=pFunc(p1,p2); // r=0 Iguales - r=1 p1>p2 - r=-1 p1<p2
 
+                if ((order==0 && r==-1) || (order==1 && r==1)){
+                    //ord=1;//descendente || ord=0;//ascendente
+
+                    aux=p1;
+                    ll_set(this,i,p2);
+                    ll_set(this,j,aux);
+                }
+
+                /*
                 switch (order)
                 {
                     case 0:
@@ -618,6 +613,7 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
                         returnAux=-1;
                         break;
                 }
+                */
             }
         }
     }
