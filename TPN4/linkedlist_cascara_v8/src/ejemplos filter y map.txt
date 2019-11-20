@@ -1,0 +1,81 @@
+
+LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*))
+{
+    LinkedList* returnAux;
+    int len;
+    int i;
+    void* pElement;
+    if(this != NULL && pFunc != NULL)
+    {
+        returnAux = ll_newLinkedList();
+        len = ll_len(this);
+        for(i=0;i<len;i++)
+        {
+            pElement = ll_get(this, i);
+            if(pFunc(pElement) == 1)
+            {
+                ll_add(returnAux, pElement);
+            }
+        }
+    }
+    return returnAux;
+}
+//*********************************************************
+//********* Ejemplo para la funcion ll_filter  ************
+//*********************************************************
+int sublista_Plus(void* pElement)
+{
+    int returnAux=-1;
+    Employee* p1;
+    p1=(Employee*) pElement;
+
+    if (strcmp(p1->descripcion,"PLUS")==0)
+    {
+        returnAux=1;
+    }
+    else
+    {
+        returnAux=0;
+    }
+
+    return returnAux;
+}
+//*********************************************************
+
+
+void ll_map(LinkedList* this, void (*pFunc)(void*))
+{
+    int i;
+
+    if( this != NULL && pFunc != NULL )
+    {
+        for(i=0; i< ll_len(this) ; i++)
+        {
+                pFunc(ll_get(this,i));
+        }
+    }
+}
+
+//********************************************************
+//********* Ejemplo para la funcion ll_map    ************
+//*********************************************************
+
+void paquetes_mapTipo(void* pNode)
+{
+    char aux[15];
+
+    if (pNode!= NULL){
+
+        employee_getDescripcion(pNode,aux);
+        if (strcmp(aux,"GOLD")==0){
+            employee_setTipo(pNode,'G');
+        }
+        else if (strcmp(aux,"PLUS")==0){
+            employee_setTipo(pNode, 'P');
+        }
+        else
+        {
+            employee_setTipo(pNode,'R');
+        }
+    }
+}
